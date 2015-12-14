@@ -22,7 +22,16 @@ var stringifyJSON = function(obj) {
 		}
 		str += ']';
 	} else {
-		str += obj;
+		str += '{';
+		for(var x in obj) {
+			if(typeof obj[x] !== 'function' && typeof obj[x] !== 'undefined') {
+				if(str !== '{') {
+					str += ",";
+				}
+				str += stringifyJSON(x) + ":" + stringifyJSON(obj[x]);
+			}
+		}
+		str += '}';
 	}
 	return str;
 };
