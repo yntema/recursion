@@ -11,7 +11,6 @@ var getElementsByClassName = function(className){
 		for(var i = 0; i < nodeArray.length; i++) {
 			if(nodeArray[i].classList) {
 				for(var j = 0; j < nodeArray[i].classList.length; j++) {
-					console.log("this class is: ", nodeArray[i].classList[j])
 					if(nodeArray[i].classList[j] === className) {
 						elements.push(nodeArray[i])
 					}
